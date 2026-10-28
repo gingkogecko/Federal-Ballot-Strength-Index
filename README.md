@@ -7,7 +7,7 @@ There are House, Senate and combined versions, each in two flavors of population
 - **Weighted (per voter):** Measures how much your vote matters, by dividing the power by the total votes cast in the 2024 Presidential Election. This favors smaller electorates, like lower population senate seats (such as Alaska, Maine and Nebraska) as well as smaller than average congressional districts due to rounding impacts in seat apportionment (like in Alabama, Colorado, Montana, Nebraska which have smaller than average district populations) or due to low turnout in 2024 (CA-22, TX-09 are examples) tend to be a bit upweighted, because these jurisdictions have less voters.
 - **Unweighted (per race):** Measures how much this race (or combination of races matters. No adjustment for how many people vote. This version does not consider electorate population impact on voter power, only the closeness of the races in combination.
 
-The site (in `docs/`) lets you change the assumptions below and shows the top 15 for the combined, House and Senate indexes, plus a search by district, state or candidate.
+The site (in `docs/`) lets you change the assumptions below and shows the top 15 for the combined, House, Senate and state-average indexes, plus a search by district, state or candidate. A state search always returns the statewide result.
 
 ## Data sources
 
@@ -29,3 +29,7 @@ The forecast and vote data belong to their respective publishers. Forecasts chan
 6. **Normalization.** Weighted indexes divide by the vote-weighted average (average voter = 1). Unweighted indexes divide by the simple average across races (average race = 1).
 7. **Fragile rankings.** Rankings that change when σ mode or curve shape changes should be treated as fragile; the search box shows each district's rank range across settings.
 8. **Known side effect.** Per-voter power rewards low-turnout districts. Among 60 competitive districts, the log of power correlates about 0.85 with closeness and about −0.46 with the log of votes cast.
+
+## State average
+
+The state-average index is the average of a state's House district combined indexes (weighted by votes when counting per voter, a simple average per race). Each district's combined index already includes its state's Senate race, so this equals the state's average House power plus its Senate power.

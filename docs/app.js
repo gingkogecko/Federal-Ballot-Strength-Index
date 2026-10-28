@@ -37,6 +37,26 @@
 
   function recompute(s) { return VPI.compute(s || settings, data); }
 
+  // State average: mean of the state's House-district indexes (voter-weighted when counting per voter).
+  // Because each district's combined index already adds the state's Senate race, this is the
+  // state's average House power plus its Senate power.
+  function stateAgg(res, weighted) {
+    var by = {};
+    res.house.forEach(function (o) {
+      var g = by[o.rec.state] || (by[o.rec.state] = { state: o.rec.state, n: 0, T: 0, h: 0, t: 0 });
+      var wt = weighted ? o.rec.T : 1;
+      g.n++; g.T += o.rec.T; g.W = (g.W || 0) + wt; g.h += wt * o.indexHouse; g.t += wt * o.indexTotal;
+    });
+    return Object.keys(by).map(function (k) {
+      var g = by[k]; g.avgHouse = g.h / g.W; g.avgTotal = g.t / g.W; return g;
+    });
+  }
+  function stateRank(list, st) {
+    var s = list.slice().sort(function (a, b) { return b.avgTotal - a.avgTotal; });
+    for (var i = 0; i < s.length; i++) if (s[i].state === st) return i + 1;
+    return null;
+  }
+
   // ---------- table ----------
   function renderTable() {
     var rows, key, label, extraHead = "", isW = settings.weighting === "weighted";
@@ -44,6 +64,19 @@
     var hint = $("view-hint");
     var idxName = isW ? "Index (1.00 = average voter)" : "Index (1.00 = average race)";
     var list;
+    if (view === "state") {
+      var agg = stateAgg(result, isW).sort(function (a, b) { return b.avgTotal - a.avgTotal; }).slice(0, TOP_N);
+      hint.textContent = "Average of each state's House district indexes" + (isW ? " (weighted by votes)" : "") + ", which already include the state's Senate race (Senate weighted ×" + (settings.w === 4.35 ? "4.35" : settings.w) + ").";
+      table.innerHTML = "<caption class='visually-hidden'>Top " + TOP_N + " states by average combined index</caption><thead><tr><th class='num'>#</th><th>State</th><th>Senate race</th>" +
+        (isW ? "<th class='num'>Votes (2024)</th>" : "") + "<th class='num'>Districts</th><th class='num'>House avg</th><th class='num'>" + esc(idxName) + "</th></tr></thead><tbody>" +
+        agg.map(function (g, i) {
+          var sen = data.senate.filter(function (x) { return x.state === g.state; });
+          var senTxt = sen.length ? sen.map(function (x) { return forecast(x); }).join("") : '<span class="matchup">no race in 2026</span>';
+          return "<tr><td class='num rank'>" + (i + 1) + "</td><td class='id'>" + esc(STATE_NAMES[g.state]) + "</td><td>" + senTxt + "</td>" +
+            (isW ? "<td class='num'>" + fmtVotes(g.T) + "</td>" : "") + "<td class='num'>" + g.n + "</td><td class='num'>" + fmtIdx(g.avgHouse) + "</td><td class='num idx'>" + fmtIdx(g.avgTotal) + "</td></tr>";
+        }).join("") + "</tbody>";
+      return;
+    }
     if (view === "senate") {
       key = "indexSenate";
       list = result.senate.slice().sort(function (a, b) { return b[key] - a[key]; }).slice(0, TOP_N);
@@ -96,32 +129,50 @@
   function matches(q) {
     q = q.trim();
     if (!q) return [];
-    var u = q.toUpperCase().replace(/\s+/g, ""), l = q.toLowerCase();
-    var out = [];
-    data.house.forEach(function (r) {
-      var nm = STATE_NAMES[r.state].toLowerCase();
-      if (r.id === u || r.id.replace("-", "") === u.replace("-", "") || r.id.indexOf(u) === 0 && u.length >= 2 && /-/.test(u) || r.matchup.toLowerCase().indexOf(l) >= 0 && l.length >= 3) out.push({ kind: "house", id: r.id });
-      else if ((u.length === 2 && r.state === u) || (l.length >= 3 && nm.indexOf(l) === 0)) out.push({ kind: "house", id: r.id });
-    });
-    data.senate.forEach(function (r) {
-      var nm = STATE_NAMES[r.state].toLowerCase();
-      if (r.matchup.toLowerCase().indexOf(l) >= 0 && l.length >= 3) out.push({ kind: "senate", id: r.id });
-      else if ((u.length === 2 && r.state === u) || (l.length >= 3 && nm.indexOf(l) === 0)) out.push({ kind: "senate", id: r.id });
-    });
-    var seen = {}, uniq = [];
-    out.forEach(function (m) { var k = m.kind + m.id; if (!seen[k]) { seen[k] = 1; uniq.push(m); } });
-    return uniq;
+    var u = q.toUpperCase().replace(/[\s.]/g, ""), l = q.toLowerCase(), out = [], keys = Object.keys(STATE_NAMES);
+    // district code such as IA-01, ia1, AK-AL
+    var dm = u.match(/^([A-Z]{2})-?(\d{1,2}|AL)$/);
+    if (dm) {
+      var id = dm[1] + "-" + (dm[2] === "AL" ? "AL" : ("0" + dm[2]).slice(-2));
+      if (data.house.some(function (r) { return r.id === id; })) return [{ kind: "house", id: id }];
+    }
+    // state: postal code, full name, or name prefix. Always answered with the statewide result.
+    var st = keys.filter(function (k) { return k === u || (l.length >= 3 && STATE_NAMES[k].toLowerCase() === l); });
+    if (!st.length && l.length >= 3) st = keys.filter(function (k) { return STATE_NAMES[k].toLowerCase().indexOf(l) === 0; });
+    if (st.length) return st.map(function (k) { return { kind: "state", id: k }; });
+    // candidate names
+    if (l.length >= 3) {
+      data.house.forEach(function (r) { if (r.matchup.toLowerCase().indexOf(l) >= 0) out.push({ kind: "house", id: r.id }); });
+      data.senate.forEach(function (r) { if (r.matchup.toLowerCase().indexOf(l) >= 0) out.push({ kind: "senate", id: r.id }); });
+    }
+    return out;
   }
 
   function resultCard(m) {
     var isW = settings.weighting === "weighted", combos = allCombos().map(function (s) { return recompute(s); });
+    if (m.kind === "state") {
+      var agg = stateAgg(result, isW), g = agg.filter(function (x) { return x.state === m.id; })[0];
+      var rk = stateRank(agg, m.id), rngSt = range(combos.map(function (c) { return stateRank(stateAgg(c, isW), m.id); }));
+      var sens = result.senate.filter(function (x) { return x.rec.state === m.id; });
+      var senHtml = sens.length ? sens.map(function (x) {
+        return esc(x.rec.matchup) + " (" + esc(plainForecast(x.rec)) + ") · Senate index " + fmtIdx(x.indexSenate) + " · rank " + rankOf(result, "senate", x.rec.id) + " of " + result.senate.length;
+      }).join("<br>") : "none in 2026";
+      var dists = result.house.filter(function (x) { return x.rec.state === m.id; }).sort(function (a, b) { return a.rec.id < b.rec.id ? -1 : 1; });
+      var picksHtml = dists.map(function (x) { return '<button type="button" data-kind="house" data-id="' + esc(x.rec.id) + '">' + esc(x.rec.id) + "</button>"; }).join("");
+      return '<div class="result"><h3>' + esc(STATE_NAMES[m.id]) + '</h3><div>' + g.n + " House district" + (g.n === 1 ? "" : "s") + (isW ? " · " + fmtVotes(g.T) + " votes in 2024" : "") + "</div><dl>" +
+        "<dt>State average (combined)</dt><dd>" + fmtIdx(g.avgTotal) + " · rank " + rk + " of " + agg.length + " states</dd>" +
+        "<dt>House-only average</dt><dd>" + fmtIdx(g.avgHouse) + "</dd>" +
+        "<dt>Senate race</dt><dd>" + senHtml + "</dd>" +
+        "<dt>Rank range across settings</dt><dd>state average " + rngSt + "</dd></dl>" +
+        '<p class="hint">State average = the average of the state\'s House district combined indexes' + (isW ? " (weighted by votes)" : "") + ', each of which includes the state\'s Senate race. Districts:</p><div class="picks">' + picksHtml + "</div></div>";
+    }
     if (m.kind === "house") {
       var o = result.house.filter(function (x) { return x.rec.id === m.id; })[0], rec = o.rec;
       var sen = data.senate.filter(function (s) { return s.state === rec.state; });
       var rcT = rankOf(result, "total", m.id), rcH = rankOf(result, "house", m.id);
       var rngT = range(combos.map(function (c) { return rankOf(c, "total", m.id); }));
       var rngH = range(combos.map(function (c) { return rankOf(c, "house", m.id); }));
-      return '<div class="result"><h3>' + esc(rec.id) + ' <span class="matchup" style="display:inline">' + esc(rec.matchup) + "</span></h3>" +
+      return '<div class="result"><p class="hint" style="margin:0 0 6px"><button type="button" class="ghost" data-kind="state" data-id="' + esc(rec.state) + '">&larr; ' + esc(STATE_NAMES[rec.state]) + '</button></p><h3>' + esc(rec.id) + ' <span class="matchup" style="display:inline">' + esc(rec.matchup) + "</span></h3>" +
         "<div>" + esc(plainForecast(rec)) + (isW ? " · " + fmtVotes(rec.T) + " votes in 2024" : "") + "</div><dl>" +
         "<dt>Combined index</dt><dd>" + fmtIdx(o.indexTotal) + " · rank " + rcT + " of " + result.house.length + "</dd>" +
         "<dt>House-only index</dt><dd>" + fmtIdx(o.indexHouse) + " · rank " + rcH + " of " + result.house.length + "</dd>" +
@@ -131,7 +182,7 @@
     }
     var so = result.senate.filter(function (x) { return x.rec.id === m.id; })[0], sr = so.rec;
     var rs = rankOf(result, "senate", m.id), rngS = range(combos.map(function (c) { return rankOf(c, "senate", m.id); }));
-    return '<div class="result"><h3>' + esc(STATE_NAMES[sr.state]) + " Senate <span class='matchup' style='display:inline'>" + esc(sr.matchup) + "</span></h3>" +
+    return '<div class="result"><p class="hint" style="margin:0 0 6px"><button type="button" class="ghost" data-kind="state" data-id="' + esc(sr.state) + '">&larr; ' + esc(STATE_NAMES[sr.state]) + '</button></p><h3>' + esc(STATE_NAMES[sr.state]) + " Senate <span class='matchup' style='display:inline'>" + esc(sr.matchup) + "</span></h3>" +
       "<div>" + esc(plainForecast(sr)) + (isW ? " · " + fmtVotes(sr.T) + " votes in 2024" : "") + "</div><dl>" +
       "<dt>Senate index</dt><dd>" + fmtIdx(so.indexSenate) + " · rank " + rs + " of " + result.senate.length + " contested seats</dd>" +
       "<dt>Rank range across settings</dt><dd>" + rngS + "</dd></dl></div>";
@@ -141,11 +192,11 @@
     var box = $("results");
     if (!query.trim()) { box.innerHTML = ""; return; }
     var ms = matches(query);
-    if (!ms.length) { box.innerHTML = '<p class="hint">No match. Try a district like IA-01, a state, or a candidate name.</p>'; return; }
+    if (!ms.length) { box.innerHTML = '<p class="hint">No match. Try a district like IA-01, a state name or postal code, or a candidate name.</p>'; return; }
     if (ms.length === 1) { box.innerHTML = resultCard(ms[0]); return; }
     var shown = ms.slice(0, 12);
     var picks = shown.map(function (m) {
-      var label = m.kind === "senate" ? STATE_NAMES[m.id] + " Senate" : m.id;
+      var label = m.kind === "senate" ? STATE_NAMES[m.id] + " Senate" : m.kind === "state" ? STATE_NAMES[m.id] : m.id;
       return '<button type="button" data-kind="' + m.kind + '" data-id="' + esc(m.id) + '">' + esc(label) + "</button>";
     }).join("");
     box.innerHTML = '<p class="hint">' + ms.length + " matches" + (ms.length > shown.length ? " (showing " + shown.length + ")" : "") + '. Pick one:</p><div class="picks">' + picks + "</div>";

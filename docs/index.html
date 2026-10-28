@@ -53,7 +53,7 @@
   <section class="card" aria-labelledby="find-h">
     <h2 id="find-h">Find a district or state</h2>
     <label class="visually-hidden" for="q">District, state or candidate</label>
-    <input id="q" type="search" placeholder="e.g. IA-01, Iowa, Pulido" autocomplete="off">
+    <input id="q" type="search" placeholder="e.g. IA-01, Iowa, IA, Pulido" autocomplete="off">
     <div id="results" aria-live="polite"></div>
   </section>
 
@@ -63,6 +63,7 @@
       <button role="tab" id="tab-combined" aria-selected="true" aria-controls="panel" data-view="combined">Combined</button>
       <button role="tab" id="tab-house" aria-selected="false" aria-controls="panel" data-view="house">House</button>
       <button role="tab" id="tab-senate" aria-selected="false" aria-controls="panel" data-view="senate">Senate</button>
+      <button role="tab" id="tab-state" aria-selected="false" aria-controls="panel" data-view="state">State average</button>
     </div>
     <div id="panel" role="tabpanel" aria-labelledby="tab-combined">
       <p class="hint" id="view-hint"></p>
@@ -99,7 +100,8 @@ Index          = P / (average P)           1.00 = average voter (per voter) or a
       <summary>What the choices mean</summary>
       <ul>
         <li><b>Per voter</b> divides by votes cast, so a voter in a small-turnout race has more power than one in a large-turnout race with the same margin. <b>Per race</b> skips that division and ranks how decisive each race is, regardless of size.</li>
-        <li>The Senate weight only affects the Combined view. A weight of 1 counts a Senate race the same as a House race.</li>
+        <li><b>State average</b> averages the combined index of a state's House districts (weighted by votes when counting per voter). Because each district's combined index already includes its state's Senate race, this is the state's average House power plus its Senate power.</li>
+        <li>The Senate weight only affects the Combined and State average views. A weight of 1 counts a Senate race the same as a House race.</li>
         <li>States without a Senate race in 2026 have no Senate component.</li>
         <li>Rankings that change a lot between settings are less reliable than ones that stay put; the search box shows each district's rank range across settings.</li>
       </ul>
