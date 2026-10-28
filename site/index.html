@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voter Power Index – 2026 Midterms</title>
+<meta name="description" content="Which ballots are most likely to decide the 2026 US midterms? Top-15 tables for House, Senate and combined, with adjustable assumptions.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap">
+  <h1>Voter Power Index <span class="yr">2026 midterms</span></h1>
+  <p class="lede">An estimate of how likely a single ballot is to decide each race, built from Split&nbsp;Ticket's forecast. Change the assumptions below and the rankings update.</p>
+</header>
+
+<main class="wrap">
+  <section class="card" aria-labelledby="settings-h">
+    <h2 id="settings-h">Assumptions</h2>
+    <div class="controls">
+      <fieldset>
+        <legend>Count</legend>
+        <div class="seg" role="radiogroup" aria-label="Count">
+          <label><input type="radio" name="weighting" value="weighted" checked><span>Per voter</span></label>
+          <label><input type="radio" name="weighting" value="unweighted"><span>Per race</span></label>
+        </div>
+        <p class="hint" id="hint-weighting"></p>
+      </fieldset>
+      <fieldset>
+        <legend>Senate weight (combined)</legend>
+        <select id="w" aria-label="Senate weight"></select>
+        <p class="hint">How many House seats one Senate seat counts as. 4.35 = 435 House seats ÷ 100 senators.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Margin spread (σ)</legend>
+        <div class="seg" role="radiogroup" aria-label="Margin spread">
+          <label><input type="radio" name="sigma" value="common" checked><span>One per chamber</span></label>
+          <label><input type="radio" name="sigma" value="implied"><span>Per race</span></label>
+        </div>
+        <p class="hint">How uncertain the final margin is. One shared value is steadier; per-race values are backed out of each win probability.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Curve shape</legend>
+        <div class="seg" role="radiogroup" aria-label="Curve shape">
+          <label><input type="radio" name="shape" value="fat" checked><span>Fat-tailed (t, 4 d.f.)</span></label>
+          <label><input type="radio" name="shape" value="normal"><span>Normal</span></label>
+        </div>
+        <p class="hint">Fat-tailed allows for bigger polling misses than a normal bell curve.</p>
+      </fieldset>
+    </div>
+    <button type="button" id="reset" class="ghost">Reset to defaults</button>
+  </section>
+
+  <section class="card" aria-labelledby="find-h">
+    <h2 id="find-h">Find a district or state</h2>
+    <label class="visually-hidden" for="q">District, state or candidate</label>
+    <input id="q" type="search" placeholder="e.g. IA-01, Iowa, Pulido" autocomplete="off">
+    <div id="results" aria-live="polite"></div>
+  </section>
+
+  <section class="card" aria-labelledby="top-h">
+    <h2 id="top-h">Top 15</h2>
+    <div class="tabs" role="tablist" aria-label="Chamber">
+      <button role="tab" id="tab-combined" aria-selected="true" aria-controls="panel" data-view="combined">Combined</button>
+      <button role="tab" id="tab-house" aria-selected="false" aria-controls="panel" data-view="house">House</button>
+      <button role="tab" id="tab-senate" aria-selected="false" aria-controls="panel" data-view="senate">Senate</button>
+    </div>
+    <div id="panel" role="tabpanel" aria-labelledby="tab-combined">
+      <p class="hint" id="view-hint"></p>
+      <div class="tablewrap"><table id="top-table"></table></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <details open>
+      <summary>The idea</summary>
+      <p>A ballot is decisive when the final margin lands within one vote of a tie. The chance of that is the height of the margin's probability curve at a tie, doubled (one ballot moves the margin by two votes), and divided by the number of votes cast when counting per voter. The curve is centred on the forecast margin and scaled so its win probability matches the forecast. This is the approach of the studies cited below; it is not a forecast of who wins.</p>
+    </details>
+    <details>
+      <summary>Equations and symbol key</summary>
+      <pre class="eq">z = μ / σ
+P(House race)  = 2 · f(z) / (σ · T)        (per voter)
+P(House race)  = 2 · f(z) / σ              (per race)
+P(Senate race) = same formula; a state's Senate power adds across its contests
+P(combined)    = P(House) + w · P(Senate, voter's state)
+Index          = P / (average P)           1.00 = average voter (per voter) or average race (per race)</pre>
+      <ul class="key">
+        <li><b>μ</b> expected Democratic-minus-Republican margin, as a fraction of votes cast (positive = Democrat ahead)</li>
+        <li><b>σ</b> spread (scale) of the final margin. "One per chamber" uses the median of the values implied by each race's win probability; "per race" uses each race's own value where its win probability is between 5–40% or 60–95%, otherwise the chamber median</li>
+        <li><b>z</b> the forecast margin measured in σ units</li>
+        <li><b>f</b> height of the margin curve at z: Normal, or Student t with 4 degrees of freedom whose scale is set so its win probability matches the forecast</li>
+        <li><b>T</b> total votes cast in that race in the 2024 presidential election, used as a turnout proxy</li>
+        <li><b>P</b> probability that one ballot decides the race</li>
+        <li><b>w</b> Senate weight (default 4.35 = 435 ÷ 100: a senator is 1/100 of the Senate, a representative 1/435 of the House)</li>
+        <li><b>Average P</b> per voter: the vote-weighted mean across voters; per race: the simple mean across races</li>
+      </ul>
+    </details>
+    <details>
+      <summary>What the choices mean</summary>
+      <ul>
+        <li><b>Per voter</b> divides by votes cast, so a voter in a small-turnout race has more power than one in a large-turnout race with the same margin. <b>Per race</b> skips that division and ranks how decisive each race is, regardless of size.</li>
+        <li>The Senate weight only affects the Combined view. A weight of 1 counts a Senate race the same as a House race.</li>
+        <li>States without a Senate race in 2026 have no Senate component.</li>
+        <li>Rankings that change a lot between settings are less reliable than ones that stay put; the search box shows each district's rank range across settings.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Sources</summary>
+      <ul>
+        <li>Forecast (win probabilities and expected margins): Split Ticket 2026 House and Senate forecasts.</li>
+        <li>2024 presidential votes by 2026 congressional district: <a href="https://www.the-downballot.com/p/the-downballot-releases-presidential" rel="noopener">The Downballot</a>.</li>
+        <li>2024 presidential votes by state: <a href="https://www.fec.gov/documents/5644/2024presgeresults.pdf" rel="noopener">Federal Election Commission</a>.</li>
+        <li>Method: Gelman, Silver and Edlin, <a href="https://www.nber.org/system/files/working_papers/w15220/w15220.pdf" rel="noopener">What is the Probability Your Vote Will Make a Difference?</a>; Gelman, Katz and Bafumi, <a href="https://sites.stat.columbia.edu/gelman/research/published/gelmankatzbafumi.pdf" rel="noopener">Standard Voting Power Indexes Don't Work</a>; Mulligan and Hunter, <a href="https://www.nber.org/papers/w8590.pdf" rel="noopener">The Empirical Frequency of a Pivotal Vote</a>.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Limits</summary>
+      <ul>
+        <li>The forecast is another group's work; this page only converts its numbers. Forecasts change, and so will these rankings.</li>
+        <li>2024 presidential turnout is a stand-in for 2026 turnout, which will be lower and will differ by place.</li>
+        <li>Races with no major-party opponent, or where two candidates of one party advance, show extreme margins and rank at the bottom.</li>
+        <li>The index measures the chance of casting a deciding ballot, not a voter's influence on policy.</li>
+      </ul>
+    </details>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Data built <span id="built"></span>. Forecast inputs belong to their respective publishers.</p>
+</footer>
+
+<script src="model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

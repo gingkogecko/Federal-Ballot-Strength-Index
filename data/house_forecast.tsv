@@ -1,0 +1,436 @@
+cd	matchup	raw_prediction	win_prob_d
+AK-AL	Bill Hill (Ind) vs Nick Begich (R)	6	15
+AL-01	Clyde Jones Jr. (D) vs Jerry Carl (R)	26.8	0
+AL-02	Shomari Figures (D) vs Rhett Marques (R)	-0.1	51
+AL-03	Lee McInnis (D) vs Mike Rogers (R)	40.6	0
+AL-04	Amanda Pusczek (D) vs Robert Aderholt (R)	59.5	0
+AL-05	Andrew Sneed (D) vs Dale Strong (R)	23.5	0
+AL-06	Maurice Mercer (D) vs Gary Palmer (R)	26.2	0
+AL-07	Terri Sewell (D) vs Ammie Akin (R)	-33.8	100
+AR-01	Terri Green (D) vs Rick Crawford (R)	39.9	0
+AR-02	Chris Jones (D) vs French Hill (R)	6.8	12
+AR-03	Robb Ryerse (D) vs Steve Womack (R)	19.3	0
+AR-04	James Russell (D) vs Bruce Westerman (R)	34.1	0
+AZ-01	Amish Shah (D) vs Jay Feely (R)	-9.3	94
+AZ-02	Jonathan Nez (D) vs Eli Crane (R)	-0.3	53
+AZ-03	Yassamin Ansari (D) vs Nicholas Glenn (R)	-61	100
+AZ-04	Greg Stanton (D) vs Zuhdi Jasser (R)	-24.8	100
+AZ-05	Elizabeth Lee (D) vs Mark Lamb (R)	9	5
+AZ-06	JoAnna Mendoza (D) vs Juan Ciscomani (R)	-9.9	95
+AZ-07	Adelita Grijalva (D) vs Daniel Butierez (R)	-42.7	100
+AZ-08	Bernadette Greene-Placentia (D) vs Abraham Hamadeh (R)	6.4	11
+AZ-09	Dani Sterbinsky (D) vs Paul Gosar (R)	19.3	0
+CA-01	Mike McGuire (D) vs James Gallagher (R)	-20	100
+CA-02	Jared Huffman (D) vs Robin Littau (R)	-36.4	100
+CA-03	Ami Bera (D) vs Robb Tucker (R)	-22.6	100
+CA-04	Mike Thompson (D) vs Eric Jones (D)	-100	100
+CA-05	Michael Masuda (D) vs Tom McClintock (R)	16.9	0
+CA-06	Richard Pan (D) vs Kevin Kiley (Ind)	-11.7	98
+CA-07	Doris Matsui (D) vs Mai Vang (D)	-100	100
+CA-08	John Garamendi (D) vs Rudy Recile (R)	-47.7	100
+CA-09	Josh Harder (D) vs John McBride (R)	-27.1	100
+CA-10	Mark DeSaulnier (D) vs Jeff Frese (R)	-44.3	100
+CA-11	Scott Weiner (D) vs Connie Chan (D)	-100	100
+CA-12	Lateefah Simon (D)	-100	100
+CA-13	Adam Gray (D) vs Kevin Lincoln (R)	-14.3	99
+CA-14	Aisha Wahab (D) vs Melissa Hernandez (D)	-100	100
+CA-15	Kevin Mullin (D) vs Charles Hoelter (R)	-59.2	100
+CA-16	Sam Liccardo (D) vs Peter Soule (R)	-61.3	100
+CA-17	Ro Khanna (D) vs Ritesh Tandon (R)	-50.6	100
+CA-18	Zoe Lofgren (D) vs Shane Lewis (R)	-40.3	100
+CA-19	Jimmy Panetta (D) vs Peter Coe Verbica (R)	-48.1	100
+CA-20	Sandra Van Scotter (D) vs Vince Fong (R)	29.4	0
+CA-21	Jim Costa (D) vs Kyle Kirkland (R)	-18.3	100
+CA-22	Randy Villegas (D) vs David Valadao (R)	-4.1	77
+CA-23	Tessa Lynn Hodge (D) vs Jay Obernolte (R)	17.9	0
+CA-24	Salud Carbajal (D) vs Bob Smith (R)	-35.8	100
+CA-25	Raul Ruiz (D) vs Joe Males (R)	-23.3	100
+CA-26	Jacqui Irwin (D) vs Sam Gallucci (R)	-25.6	100
+CA-27	George Whitesides (D) vs Jason Gibbs (R)	-24.4	100
+CA-28	Judy Chu (D) vs April A. Verlato (R)	-38.3	100
+CA-29	Luz Rivas (D) vs Angélica María Dueñas (D)	-100	100
+CA-30	Laura Friedman (D) vs Scott Alan Meyers (R)	-52.4	100
+CA-31	Gil Cisneros (D) vs Eric Ching (R)	-24.1	100
+CA-32	Brad Sherman (D) vs Larry Thompson (R)	-36.1	100
+CA-33	Pete Aguilar (D) vs Stephanie M. Vargas (R)	-24.7	100
+CA-34	Jimmy Gomez (D) vs Angela Gonzales-Torres (D)	-100	100
+CA-35	Norma Torres (D) vs Mike Cargile (R)	-21.2	100
+CA-36	Ted Lieu (D) vs Houston Brignano (R)	-49.5	100
+CA-37	Sydney Kamlager-Dove (D) vs Samantha Mota (D)	-100	100
+CA-38	Hilda Solis (D) vs Pedro Antonio Casas (R)	-25.1	100
+CA-39	Mark Takano (D) vs Steve Manos (R)	-23.9	100
+CA-40	Young Kim (R) vs Ken Calvert (R)	100	0
+CA-41	Linda Sanchez (D) vs Mitch Clemmons (R)	-28.1	100
+CA-42	Robert Garcia (D) vs Brian Burley (R)	-26	100
+CA-43	Maxine Waters (D) vs Cristian Morales (R)	-61.1	100
+CA-44	Nanette Barragan (D) vs Genevieve Angel (R)	-52.8	100
+CA-45	Derek Tran (D) vs Chuong V. Vo (R)	-18.8	100
+CA-46	Lou Correa (D) vs David Pan (R)	-35.2	100
+CA-47	Dave Min (D) vs Jenny Rae Le Roux (R)	-22.1	100
+CA-48	Marni von Wilpert (D) vs Jim Desmond (R)	-10.4	96
+CA-49	Mike Levin (D) vs Armen Kurdian (R)	-23.3	100
+CA-50	Scott Peters (D) vs Steve Cohen (R)	-28.4	100
+CA-51	Sara Jacobs (D) vs Ricardo Cabrera (R)	-30.3	100
+CA-52	Juan Vargas (D) vs Jeff Belle (R)	-34.1	100
+CO-01	Melat Kiros (D) vs Christy Peterson (R)	-66.9	100
+CO-02	Joe Neguse (D) vs Kelley Anne Dennison (R)	-52.7	100
+CO-03	Dwayne Romero (D) vs Jeff Hurd (R)	1.7	37
+CO-04	Eileen Laubacher (D) vs Lauren Boebert (R)	0.7	45
+CO-05	Jessica Killin (D) vs Jeff Crank (R)	2.2	35
+CO-06	Jason Crow (D) vs Mel Tewahade (R)	-33.5	100
+CO-07	Brittany Pettersen (D) vs Tim Bennett (R)	-29.2	100
+CO-08	Manny Rutinel (D) vs Gabe Evans (R)	-4.2	77
+CT-01	Luke Bronin (D) vs Amy Chai (R)	-35.7	100
+CT-02	Joe Courtney (D) vs George Austin (R)	-27	100
+CT-03	Rosa DeLauro (D) vs Christopher Lancia (R)	-30.1	100
+CT-04	Jim Himes (D) vs Michael Goldstein (R)	-35.8	100
+CT-05	Jahana Hayes (D) vs Chris Shea (R)	-18.7	100
+DE-AL	Sarah McBride (D) vs Joseph Arminio (R)	-30	100
+FL-01	Gay Valimont (D) vs Jimmy Patronis (R)	29.7	0
+FL-02	Amanda Green (D) vs Austin Rogers (R)	9.8	4
+FL-03	Seth Harp (D) vs Kat Cammack (R)	16.5	0
+FL-04	LaShonda Holloway (D) vs Aaron Bean (R)	8	7
+FL-05	Rachel Grage (D) vs John Rutherford (R)	17.5	0
+FL-06	Eric Yonce (D) vs Randy Fine (R)	24.7	0
+FL-07	Bale Dalton (D) vs Ryan Elijah (R)	1.2	42
+FL-08	Jennifer Jenkins (D) vs Mike Haridopolos (R)	10.6	3
+FL-09	Darren Soto (D) vs Dan Green (R)	2.5	31
+FL-10	Maxwell Frost (D)	-100	100
+FL-11	James Pericola (D) vs Joe Strada (R)	8.8	5
+FL-12	Kimberly Overman (D) vs Gus Bilirakis (R)	12.1	1
+FL-13	Leela Gray (D) vs Anna Paulina Luna (R)	2.9	31
+FL-14	Kathy Castor (D) vs Mike Beltran (R)	-3.2	74
+FL-15	Robert People (D) vs Laurel Lee (R)	15.8	0
+FL-16	Kelly Kirschner (D) vs Sydney Gruters (R)	4.9	18
+FL-17	Matthew Montavon (D) vs Greg Steube (R)	18.4	0
+FL-18	Curtis Gibson (D) vs Scott Franklin (R)	12.4	1
+FL-19	Victor Arias (D) vs Jim Schwartzel (R)	23.4	0
+FL-20	Debbie Wasserman Schultz (D) vs Brent Andersen (R)	-50.5	100
+FL-21	James Martin (D) vs Brian Mast (R)	14.3	1
+FL-22	Pia Dandiya (D) vs Casey Askar (R)	0.9	43
+FL-23	Lois Frankel (D) vs Deborah Adeimy (R)	-29.3	100
+FL-24	Oliver Gilbert (D) vs Te Mayonna Brown (R)	-48.8	100
+FL-25	Jared Moskowitz (D) vs Scott Singer (R)	-4.1	79
+FL-26	Nicole Locklin (D) vs Mario Diaz-Balart (R)	15.2	1
+FL-27	Eliott Rodriguez (D) vs Maria Elvira Salazar (R)	8.3	8
+FL-28	Phil Ehr (D) vs Carlos Gimenez (R)	19.9	0
+GA-01	Amanda Hollowell (D) vs Jim Kingston (R)	12.9	1
+GA-02	Sanford Bishop (D) vs Matt Day (R)	-19.6	100
+GA-03	Maura Keller (D) vs Brian Jack (R)	29.6	0
+GA-04	Hank Johnson (D) vs James Duffie (R)	-61.5	100
+GA-05	Nikema Williams (D) vs John Oscar Salvesen (R)	-78.9	100
+GA-06	Lucy McBath (D) vs Kevin Martin (R)	-58.5	100
+GA-07	Tony Kozycki (D) vs Rich McCormick (R)	19.5	1
+GA-08	Kelly Esti (D) vs Austin Scott (R)	31	0
+GA-09	Caitlyn Gegen (D) vs Andrew Clyde (R)	32.9	0
+GA-10	Pamela Delancy (D) vs Houston Gaines (R)	18	0
+GA-11	Chris Harden (D) vs John Cowan (R)	20	0
+GA-12	Ceretta Smith (D) vs Rick Allen (R)	15.5	0
+GA-13	Jasmine Clark (D) vs Jonathan Chavez (R)	-50	100
+GA-14	Shawn Harris (D) vs Clay Fuller (R)	26.5	0
+HI-01	Ed Case (D) vs Adriel Lam (R)	-48.4	100
+HI-02	Jill Tokuda (D) vs Brenton Awa (R)	-40.8	100
+IA-01	Christina Bohannan (D) vs Mariannette Miller-Meeks (R)	-5.4	83
+IA-02	Lindsay James (D) vs Joe Mitchell (R)	-1.9	63
+IA-03	Sarah Trone Garriott (D) vs Zach Nunn (R)	-5.1	82
+IA-04	Dave Dawson (D) vs Chris McGowan (R)	21.6	0
+ID-01	Kaylee Peterson (D) vs Russ Fulcher (R)	39.3	0
+ID-02	Ellie Gilbreath (D) vs Mike Simpson (R)	22.3	0
+IL-01	Jonathan Jackson (D) vs Christian Maxwell (R)	-43.9	100
+IL-02	Donna Miller (D) vs Michael Noack (R)	-45.6	100
+IL-03	Delia Ramirez (D) vs Angel Oakley (R)	-48.7	100
+IL-04	Patty Garcia (D) vs Lupe Castillo (R)	-44.1	100
+IL-05	Mike Quigley (D) vs Tommy Hanson (R)	-52.2	100
+IL-06	Sean Casten (D) vs Niki Conforti (R)	-21.6	100
+IL-07	La Shawn Ford (D) vs Chad Koppie (R)	-75	100
+IL-08	Melissa Bean (D) vs Jennifer Davis (R)	-18.6	100
+IL-09	Daniel Biss (D) vs John Elleson (R)	-46	100
+IL-10	Brad Schneider (D) vs Carl Lambrecht (R)	-36.5	100
+IL-11	Bill Foster (D) vs Jeff Walter (R)	-26.8	100
+IL-12	Julie Fortier (D) vs Mike Bost (R)	38	0
+IL-13	Nikki Budzinski (D) vs Jeff Wilson (R)	-28.8	100
+IL-14	Lauren Underwood (D) vs James Marter (R)	-23.4	100
+IL-15	Jennifer Todd (D) vs Mary Miller (R)	33.4	0
+IL-16	Paul Nolley (D) vs Darin LaHood (R)	21.1	0
+IL-17	Eric Sorensen (D) vs Dillan Vancil (R)	-21.5	100
+IN-01	Frank Mrvan (D) vs Barb Regnitz (R)	-17.3	100
+IN-02	Jamee Decio (D) vs Rudy Yakym (R)	19.8	0
+IN-03	Kelly Thompson (D) vs Marlin Stutzman (R)	24	0
+IN-04	Drew Cox (D) vs Jim Baird (R)	23.7	0
+IN-05	J.D. Ford (D) vs Victoria Spartz (R)	6.5	14
+IN-06	Cinde Wirth (D) vs Jefferson Shreve (R)	25.3	0
+IN-07	Andre Carson (D) vs Patrick McAuley (R)	-56.6	100
+IN-08	Mary Allen (D) vs Mark Messmer (R)	29.4	0
+IN-09	Brad Meyer (D) vs Erin Houchin (R)	23.2	0
+KS-01	Lauren Reinhold (D) vs Tracey Mann (R)	28	0
+KS-02	Don Coover (D) vs Derek Schmidt (R)	11.1	5
+KS-03	Sharice Davids (D) vs Eric Jenkins (R)	-21.6	100
+KS-04	Katy Tyndell (D) vs Ron Estes (R)	18.9	0
+KY-01	Drew Williams (D) vs James Comer (R)	40	0
+KY-02	Megan Wingfield (D) vs Brett Guthrie (R)	35.3	0
+KY-03	Morgan McGarvey (D) vs Maria Rodriguez (R)	-37.6	100
+KY-04	Melissa Strange (D) vs Ed Gallrein (R)	26	0
+KY-05	Ned Pillersdorf (D) vs Hal Rogers (R)	55.8	0
+KY-06	Zach Dembo (D) vs Ralph Alvarado (R)	-1.2	57
+LA-01	Lauren Jewett (D) vs Steve Scalise (R)	38	0
+LA-02	Troy Carter (D) vs Eventual Nominee (R)	-62.4	100
+LA-03	Eventual Nominee (D) vs Clay Higgins (R)	36.8	0
+LA-04	Eventual Nominee (D) vs Mike Johnson (R)	35.3	0
+LA-05	Eventual Nominee (D) vs Eventual Nominee (R)	29.9	0
+LA-06	Cleo Fields (D) vs Eventual Nominee (R)	22.6	0
+MA-01	Richard Neal (D)	-100	100
+MA-02	Jim McGovern (D)	-100	100
+MA-03	Lori Trahan (D) vs Gary Grossi (R)	-34.3	100
+MA-04	Jake Auchincloss (D) vs Tom Stalcup (R)	-31	100
+MA-05	Katherine Clark (D)	-100	100
+MA-06	Dan Koh (D) vs Micah Jones (R)	-32	100
+MA-07	Ayanna Pressley (D)	-100	100
+MA-08	Stephen Lynch (D) vs Robert Burke (R)	-46.4	100
+MA-09	Bill Keating (D) vs Tyler MacAllister (R)	-24.9	100
+MD-01	Dan Schwartz (D) vs Andy Harris (R)	10	4
+MD-02	Johnny Olszewski (D) vs Dave Wallace (R)	-33.6	100
+MD-03	Sarah Elfreth (D) vs Berney Flowers (R)	-38.6	100
+MD-04	Glenn Ivey (D) vs George McDermott (R)	-87.3	100
+MD-05	Adrian Boafo (D) vs Chris Chaffee (R)	-44.7	100
+MD-06	April McClain Delaney (D) vs Robin Ficker (R)	-22.6	100
+MD-07	Kweisi Mfume (D) vs Scott Collier (R)	-75.3	100
+MD-08	Jamie Raskin (D) vs Cheryl Riley (R)	-68.5	100
+ME-01	Chellie Pingree (D) vs Ronald Russell (R)	-32.9	100
+ME-02	Matt Dunlap (D) vs Paul LePage (R)	1.3	42
+MI-01	Callie Barr (D) vs Jack Bergman (R)	11.5	3
+MI-02	Ben Ambrose (D) vs John Moolenaar (R)	25.5	0
+MI-03	Hillary Scholten (D) vs Terri DeBoer (R)	-23.8	100
+MI-04	Sean McCann (D) vs Bill Huizenga (R)	0.3	48
+MI-05	Christian Vukasovich (D) vs Tim Walberg (R)	22.5	0
+MI-06	Debbie Dingell (D) vs Heather Smiley (R)	-40.7	100
+MI-07	Will Lawrence (D) vs Tom Barrett (R)	-3.5	73
+MI-08	Kristen McDonald Rivet (D) vs Thomas Smith (R)	-17.4	100
+MI-09	Ray Pooley (D) vs Lisa McClain (R)	27.8	0
+MI-10	Christina Hines (D) vs Michael Bouchard (R)	-3.1	69
+MI-11	Jeremy Moss (D) vs Ethan Baker (R)	-28.9	100
+MI-12	Rashida Tlaib (D) vs James Hooper (R)	-54.4	100
+MI-13	Donovan McKinney (D) vs T.P. Nykoriak (R)	-53.4	100
+MN-01	Jake Johnson (D) vs Brad Finstad (R)	6.2	21
+MN-02	Matt Little (D) vs Eric Pratt (R)	-11.1	98
+MN-03	Kelly Morrison (D) vs Tyler Bass (R)	-30.2	100
+MN-04	Betty McCollum (D) vs Paul Wiksom (R)	-44	100
+MN-05	Ilhan Omar (D) vs John Nagel (R)	-63.7	100
+MN-06	Doug Chapin (D) vs Tom Emmer (R)	21.2	0
+MN-07	Erik Osberg (D) vs Michelle Fischbach (R)	35.3	0
+MN-08	Trina Swanson (D) vs Pete Stauber (R)	14	1
+MO-01	Wesley Bell (D) vs Paul Berry III (R)	-71.9	100
+MO-02	Fred Wellman (D) vs Ann Wagner (R)	1.5	40
+MO-03	Bethany Mann (D) vs Bob Onder (R)	21.2	0
+MO-04	Jordan Herrera (D) vs Mark Alford (R)	38.6	0
+MO-05	Emanuel Cleaver (D) vs Rick Brattin (R)	-37.3	100
+MO-06	Josh Smead (D) vs Chris Stigall (R)	30.9	0
+MO-07	Missi Hesketh (D) vs Eric Burlison (R)	38.4	0
+MO-08	Chris Reichard (D) vs Jason Smith (R)	48.6	0
+MS-01	Cliff Johnson (D) vs Trent Kelly (R)	31.9	0
+MS-02	Bennie Thompson (D) vs Ron Eller (R)	-33.8	100
+MS-03	Michael Chiaradio (D) vs Michael Guest (R)	27.8	0
+MS-04	Jeffrey Hulum III (D) vs Mike Ezell (R)	40.3	0
+MT-01	Sam Forstag (D) vs Aaron Flint (R)	0.5	47
+MT-02	Brian Miller (D) vs Troy Downing (R)	25.8	0
+NC-01	Don Davis (D) vs Laurie Buckhout (R)	-3.5	75
+NC-02	Deborah Ross (D) vs Eugene Douglass (R)	-48.5	100
+NC-03	Raymond Smith Jr. (D) vs Greg Murphy (R)	9.7	3
+NC-04	Valerie Foushee (D) vs Max Ganorkar (R)	-59.9	100
+NC-05	Chuck Hubbard (D) vs Virginia Foxx (R)	9.9	4
+NC-06	Cyril Jefferson (D) vs Addison McDowell (R)	12.5	1
+NC-07	Kimberly Hardy (D) vs David Rouzer (R)	8.7	6
+NC-08	Colby Watson (D) vs Mark Harris (R)	13.8	1
+NC-09	Richard Ojeda (D) vs Richard Hudson (R)	7	10
+NC-10	Ashley Bell (D) vs Pat Harrigan (R)	13	1
+NC-11	Jamie Ager (D) vs Jennifer Balkcom (R)	-4.7	76
+NC-12	Alma Adams (D) vs Jack Codiga (R)	-59.2	100
+NC-13	Paul Barringer (D) vs Brad Knott (R)	8.5	6
+NC-14	Lakesha Womack (D) vs Tim Moore (R)	10	3
+ND-AL	Trygve Hammer (D) vs Julie Fedorchak (R)	32.9	0
+NE-01	Chris Backemeyer (D) vs Mike Flood (R)	5	21
+NE-02	Denise Powell (D) vs Brinker Harding (R)	-15.4	100
+NE-03	Becky Stille (D) vs Adrian Smith (R)	49.7	0
+NH-01	Stefany Shaheen (D) vs Anthony DiLorenzo (R)	-7.6	88
+NH-02	Maggie Goodlander (D) vs Lily Tang Williams (R)	-18.4	100
+NJ-01	Donald Norcross (D) vs Damon Galdo (R)	-32.1	100
+NJ-02	Zack Mullock (D) vs Jeff Van Drew (R)	9.8	4
+NJ-03	Herb Conaway (D) vs Michael McGuire (R)	-22.3	100
+NJ-04	Rachel Peace (D) vs Chris Smith (R)	29.7	0
+NJ-05	Josh Gottheimer (D) vs Sean Kirrane (R)	-18.4	100
+NJ-06	Frank Pallone (D) vs Hillary Herzig (R)	-23	100
+NJ-07	Rebecca Bennett (D) vs Tom Kean (R)	-4.4	79
+NJ-08	Rob Menendez (D)	-100	100
+NJ-09	Nellie Pou (D) vs Rosie Pino (R)	-14.7	100
+NJ-10	LaMonica McIver (D) vs Carmen Bucco (R)	-62.4	100
+NJ-11	Analilia Mejia (D) vs Joe Hathaway (R)	-20.7	100
+NJ-12	Adam Hamawy (D) vs Gregg Mele (R)	-35.3	100
+NM-01	Melanie Stansbury (D) vs Didi Okpareke (R)	-26	100
+NM-02	Gabe Vasquez (D) vs Greg Cunningham (R)	-10	94
+NM-03	Teresa Leger Fernandez (D) vs Martin Zamora (R)	-19	100
+NV-01	Dina Titus (D) vs Carrie Buck (R)	-14.2	100
+NV-02	Teresa F. Benitez-Thompson (D) vs David Flippo (R)	6	15
+NV-03	Susie Lee (D) vs Marty O'Donnell (R)	-10.6	98
+NV-04	Steven Horsford (D) vs Cody Whipple (R)	-15.8	100
+NY-01	Christopher Gallant (D) vs Nick LaLota (R)	3.8	24
+NY-02	Patrick Halpin (D) vs Andrew Garbarino (R)	11.3	2
+NY-03	Tom Suozzi (D) vs Michael LiPetri (R)	-10.2	97
+NY-04	Laura Gillen (D) vs Jeanine Driscoll (R)	-16.1	100
+NY-05	Greg Meeks (D) vs George Marsh (R)	-53.5	100
+NY-06	Grace Meng (D) vs Joseph Chou (R)	-26.9	100
+NY-07	Claire Valdez (D) vs Melvin Rivera (R)	-58.6	100
+NY-08	Hakeem Jeffries (D) vs Lewis Mizrahi (R)	-58.3	100
+NY-09	Yvette Clarke (D) vs Joel Anabilah-Azumah (R)	-56	100
+NY-10	Brad Lander (D) vs Jennifer Moore (R)	-71.6	100
+NY-11	Michael DeCillis (D) vs Nicole Malliotakis (R)	20.9	0
+NY-12	Micah Lasher (D) vs Caroline Shinkle (R)	-74.1	100
+NY-13	Darializa Chevalier (D) vs Jomo Williams (R)	-72.1	100
+NY-14	Alexandria Ocasio-Cortez (D) vs Diamant Hysenaj (R)	-48.1	100
+NY-15	Ritchie Torres (D) vs Stylo Sapaskis (R)	-68.6	100
+NY-16	George Latimer (D) vs Joseph Cinquemani (R)	-51.1	100
+NY-17	Cait Conley (D) vs Mike Lawler (R)	-3.4	72
+NY-18	Pat Ryan (D) vs Jacqueline Auringer (R)	-21.5	100
+NY-19	Josh Riley (D) vs Pete Oberacker (R)	-18.4	100
+NY-20	Paul Tonko (D) vs Ralph Ambrosio (R)	-31.2	100
+NY-21	Blake Gendebien (D) vs Anthony Constantino (R)	4.3	23
+NY-22	John Mannion (D) vs Kailee Buller (R)	-24.7	100
+NY-23	Aaron Gies (D) vs Nick Langworthy (R)	18.4	0
+NY-24	Alissa Ellman (D) vs Claudia Tenney (R)	18.6	0
+NY-25	Joseph Morelle (D) vs Virginia McIntyre (R)	-32.9	100
+NY-26	Tim Kennedy (D) vs Dennis Hannon (R)	-37.3	100
+OH-01	Greg Landsman (D) vs Eric Conroy (R)	-7.6	91
+OH-02	Jennifer Mazzuckelli (D) vs David Taylor (R)	39.6	0
+OH-03	Joyce Beatty (D) vs Cleophus Dulaney (R)	-51.7	100
+OH-04	Joshua Kolasinski (D) vs Jim Jordan (R)	38.8	0
+OH-05	Brian Shaver (D) vs Bob Latta (R)	23	0
+OH-06	Elizabeth Kirtley (D) vs Michael Rulli (R)	31.2	0
+OH-07	Brian Poindexter (D) vs Max Miller (R)	-3.1	70
+OH-08	Vanessa Enoch (D) vs Warren Davidson (R)	12.7	1
+OH-09	Marcy Kaptur (D) vs Derek Merrin (R)	-4.7	81
+OH-10	Kristina Knickerbocker (D) vs Mike Turner (R)	6.6	15
+OH-11	Shontel Brown (D) vs Mike Kirchner (R)	-68.6	100
+OH-12	Jerrad Christian (D) vs Troy Balderson (R)	28.1	0
+OH-13	Emilia Sykes (D) vs Carey Coleman (R)	-18.1	100
+OH-14	Maria Jukic (D) vs David Joyce (R)	20.6	0
+OH-15	Don Leonard (D) vs Mike Carey (R)	4.1	25
+OK-01	John Croisant (D) vs Mark Tedford (R)	12	1
+OK-02	Brandon Wade (D) vs Josh Brecheen (R)	49	0
+OK-03	Suzie Byrd (D) vs Frank Lucas (R)	42.7	0
+OK-04	Mitchell Jacob (D) vs Tom Cole (R)	30.7	0
+OK-05	Jena Nelson (D) vs Stephanie Bice (R)	13.9	1
+OR-01	Suzanne Bonamici (D) vs Barbara Kahl (R)	-53.9	100
+OR-02	Chris Beck (D) vs Cliff Bentz (R)	22.4	0
+OR-03	Maxine Dexter (D) vs Loran Ayles (R)	-61.9	100
+OR-04	Val Hoyle (D) vs Monique DeSpain (R)	-22.2	100
+OR-05	Janelle Bynum (D) vs Patti Adair (R)	-24.3	100
+OR-06	Andrea Salinas (D) vs David Russ (R)	-25.5	100
+PA-01	Bob Harvie (D) vs Brian Fitzpatrick (R)	0.3	48
+PA-02	Brendan Boyle (D) vs Jessica Arriaga (R)	-54.7	100
+PA-03	Chris Rabb (D)	-100	100
+PA-04	Madeleine Dean (D) vs Aurora Stuski (R)	-32.3	100
+PA-05	Mary Gay Scanlon (D) vs Nicholas Manganaro (R)	-43.9	100
+PA-06	Chrissy Houlahan (D) vs Marty Young (R)	-27.7	100
+PA-07	Bob Brooks (D) vs Ryan Mackenzie (R)	-5.3	84
+PA-08	Paige Cognetti (D) vs Rob Bresnahan (R)	-3	70
+PA-09	Rachel Wallace (D) vs Dan Meuser (R)	28.5	0
+PA-10	Janelle Stelson (D) vs Scott Perry (R)	-4.9	76
+PA-11	Nancy Mannion (D) vs Lloyd Smucker (R)	14.4	1
+PA-12	Summer Lee (D) vs James Hayes (R)	-30.1	100
+PA-13	Beth Farnham (D) vs John Joyce (R)	39.2	0
+PA-14	Alan Bradstock (D) vs Guy Reschenthaler (R)	25.6	0
+PA-15	Ray Bilger (D) vs Glenn Thompson (R)	32	0
+PA-16	Justin Wagner (D) vs Mike Kelly (R)	15.6	1
+PA-17	Chris Deluzio (D) vs Tony Guy (R)	-23.1	100
+RI-01	Gabe Amo (D) vs Kellie Keenan (R)	-38.5	100
+RI-02	Seth Magaziner (D) vs Victor Mellor (R)	-19.7	100
+SC-01	Nancy Lacore (D) vs Jenny Costa Honeycutt (R)	1.9	37
+SC-02	Zyon Khalifa (D) vs Joe Wilson (R)	10.9	2
+SC-03	Eunice Lehmacher (D) vs Sheri Biggs (R)	41.2	0
+SC-04	Courtney McClain (D) vs William Timmons (R)	19.1	0
+SC-05	Mallory Dittmer (D) vs Wes Climer (R)	15.9	0
+SC-06	Jim Clyburn (D) vs John Peterson (R)	-35.3	100
+SC-07	John Vincent (D) vs Russell Fry (R)	21.6	0
+SD-AL	Nikki Gronli (D) vs Marty Jackley (R)	22.3	0
+TN-01	Kristie Burke (D) vs Diana Harshbarger (R)	50.8	0
+TN-02	Michaela Barnett (D) vs Tim Burchett (R)	28.2	0
+TN-03	Anna Golladay (D) vs Chuck Fleischmann (R)	29.9	0
+TN-04	Victoria Broderick (D) vs Scott DesJarlais (R)	13.7	1
+TN-05	Chaz Molder (D) vs Charlie Hatcher (R)	12.2	2
+TN-06	Mike Croley (D) vs Johnny Garrett (R)	18.2	0
+TN-07	Joshua Sales (D) vs Matt Van Epps (R)	15.7	0
+TN-08	Heidi Kuhn (D) vs David Kustoff (R)	17	0
+TN-09	Justin Pearson (D) vs Brent Taylor (R)	10.1	4
+TX-01	Yolanda Prince (D) vs Nathaniel Moran (R)	43.7	0
+TX-02	Shaun Finnie (D) vs Steve Toth (R)	9.2	4
+TX-03	Evan Hunt (D) vs Keith Self (R)	15.3	0
+TX-04	Jason Pearce (D) vs Pat Fallon (R)	18.5	0
+TX-05	Chelsey Hockett (D) vs Lance Gooden (R)	13.4	1
+TX-06	Danny Minton (D) vs Jake Ellzey (R)	15.2	0
+TX-07	Lizzie Fletcher (D) vs Alexander Hale (R)	-40.3	100
+TX-08	Laura Jones (D) vs Jessica Hart Steinmann (R)	17.8	0
+TX-09	Leticia Gutierrez (D) vs Alex Mealer (R)	9.2	5
+TX-10	Caitlin Rourk (D) vs Chris Gober (R)	12.1	1
+TX-11	Claire Reynolds (D) vs August Pfluger (R)	26.9	0
+TX-12	Angela Rodriguez (D) vs Craig Goldman (R)	18	0
+TX-13	Mark Nair (D) vs Ronny Jackson (R)	37.1	0
+TX-14	Thurman Bartie (D) vs Randy Weber (R)	17.5	0
+TX-15	Bobby Pulido (D) vs Monica De La Cruz (R)	-2.6	66
+TX-16	Veronica Escobar (D) vs Adam Bauman (R)	-34.8	100
+TX-17	Casey Shepard (D) vs Pete Sessions (R)	14.7	0
+TX-18	Christian Menefee (D) vs Ronald Whitfield (R)	-70.8	100
+TX-19	Kyle Rable (D) vs Tom Sell (R)	41.3	0
+TX-20	Joaquin Castro (D) vs Edgardo Rafael Baez (R)	-50.9	100
+TX-21	Kristin Hook (D) vs Mark Teixeira (R)	11.3	2
+TX-22	Marquette Greene-Scott (D) vs Trever Nehls (R)	12.3	1
+TX-23	Katy Padilla Stout (D) vs Brandon Herrera (R)	0	50
+TX-24	Kevin Burge (D) vs Beth Van Duyne (R)	10.3	3
+TX-25	Dione Sims (D) vs Roger Williams (R)	15.9	0
+TX-26	Steven Shook (D) vs Brandon Gill (R)	18.6	0
+TX-27	Tanya Lloyd (D) vs Michael Cloud (R)	12.4	1
+TX-28	Henry Cuellar (D) vs Tano Tijerina (R)	-13.9	98
+TX-29	Sylvia Garcia (D) vs Martha Fierro (R)	-52.4	100
+TX-30	Frederick Haynes III (D) vs Everett Jackson (R)	-60.2	100
+TX-31	Justin Early (D) vs John Carter (R)	14	1
+TX-32	Dan Barros (D) vs Jace Yarbrough (R)	9	4
+TX-33	Colin Allred (D) vs Patrick Gillespie (R)	-49.3	100
+TX-34	Vicente Gonzalez (D) vs Eric Flores (R)	-6.9	89
+TX-35	Johnny Garcia (D) vs Carlos De La Cruz (R)	-1.6	62
+TX-36	Rhonda Hart (D) vs Brian Babin (R)	17.3	0
+TX-37	Greg Casar (D) vs Lauren Peña (R)	-72.9	100
+TX-38	Melissa McDonough (D) vs Jon Bonck (R)	11.6	2
+UT-01	Ben McAdams (D) vs Riley Owen (R)	-38.7	100
+UT-02	Peter Crosby (D) vs Blake Moore (R)	26.6	0
+UT-03	Kent Udell (D) vs Celeste Maloy (R)	38.9	0
+UT-04	Jonny Larsen (D) vs Mike Kennedy (R)	33.8	0
+VA-01	Shannon Taylor (D) vs Rob Wittman (R)	-0.6	54
+VA-02	Elaine Luria (D) vs Jen Kiggans (R)	-4.6	81
+VA-03	Bobby Scott (D) vs Edwin Rivera (R)	-49.1	100
+VA-04	Jennifer McClellan (D) vs Robert Murray (R)	-46.5	100
+VA-05	Tom Perriello (D) vs John McGuire (R)	6	13
+VA-06	Beth Macy (D) vs Ben Cline (R)	18.7	0
+VA-07	Eugene Vindman (D) vs Doug Ollivant (R)	-18.5	100
+VA-08	Don Beyer (D) vs Tony Sabio (R)	-60.5	100
+VA-09	Joy Powers (D) vs Morgan Griffith (R)	38.8	0
+VA-10	Suhas Subramanyam (D) vs Dave Beckwith (R)	-20.2	100
+VA-11	James Walkinshaw (D) vs Arthur Purves (R)	-47.8	100
+VT-AL	Becca Balint (D) vs Gerald Malloy (R)	-41.9	100
+WA-01	Suzan DelBene (D) vs Mary Silva (R)	-38.2	100
+WA-02	Rick Larsen (D) vs Edwin Feller (R)	-35.9	100
+WA-03	Marie Gluesenkamp Perez (D) vs John Braun (R)	-7.4	86
+WA-04	John Duresky (D) vs Amanda McKinney (R)	14.1	1
+WA-05	Carmela Conroy (D) vs Michael Baumgartner (R)	14.7	1
+WA-06	Emily Randall (D) vs Teresa Fox (R)	-30.2	100
+WA-07	Pramila Jayapal (D) vs Nirav Sheth (R)	-81.4	100
+WA-08	Kim Schrier (D) vs Spencer Meline (R)	-18	100
+WA-09	Adam Smith (D) vs Doug Basler (R)	-51.8	100
+WA-10	Marilyn Strickland (D) vs Chris Chung (R)	-28.8	100
+WI-01	Mitchell Berman (D) vs Bryan Steil (R)	1.9	36
+WI-02	Mark Pocan (D)	-100	100
+WI-03	Rebecca Cooke (D) vs Derrick Van Orden (R)	-4.1	76
+WI-04	Gwen Moore (D) vs Tim Rogers (R)	-64.9	100
+WI-05	Andrew Beck (D) vs Scott Fitzgerald (R)	20.1	0
+WI-06	Brad Smith (D) vs Glenn Grothman (R)	13	1
+WI-07	Fred Clark (D) vs Michael Alfonso (R)	14.6	1
+WI-08	Rick Crosson (D) vs Tony Wied (R)	12	2
+WV-01	Vince George (D) vs Carol Miller (R)	35.3	0
+WV-02	Ace Parsi (D) vs Riley Moore (R)	33.7	0
+WY-AL	Lisa Kinney (D) vs Chuck Gray (R)	38.7	0
