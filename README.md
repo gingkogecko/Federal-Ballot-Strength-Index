@@ -1,6 +1,6 @@
 # Voter Power Index — 2026 US Midterms
 
-An estimate of how likely a single ballot is to decide each 2026 House and Senate race, rescaled so the average equals 1. This is not a forecast of who wins; it converts an existing forecast into ballot-level power.
+An estimate of how likely a single ballot is to decide each 2026 House and Senate race, rescaled so the average equals 1. This is not a forecast of who wins; it converts an existing forecast into ballot-level power. I'm using Lakshya Jain/Split Ticket/The Argument's forecast to power this index, due to data availability and relative consistency with other forecasts.
 
 There are House, Senate and combined versions, each in two flavors of population weighting:
 
