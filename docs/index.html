@@ -10,7 +10,7 @@
 <body>
 <header class="wrap">
   <h1>Voter Power Index <span class="yr">2026 midterms</span></h1>
-  <p class="lede">An estimate of how likely a single ballot is to decide each race, built from Split&nbsp;Ticket's forecast. Change the assumptions below and the rankings update.</p>
+  <p class="lede">An estimate of how likely a single ballot is to decide each race, built from the Split&nbsp;Ticket/The&nbsp;Argument forecast. Change the assumptions below and the rankings update.</p>
 </header>
 
 <main class="wrap">
@@ -74,55 +74,39 @@
   <section class="card" aria-labelledby="how-h">
     <h2 id="how-h">How it works</h2>
     <details open>
-      <summary>The idea</summary>
-      <p>A ballot is decisive when the final margin lands within one vote of a tie. The chance of that is the height of the margin's probability curve at a tie, doubled (one ballot moves the margin by two votes), and divided by the number of votes cast when counting per voter. The curve is centred on the forecast margin and scaled so its win probability matches the forecast. This is the approach of the studies cited below; it is not a forecast of who wins.</p>
-    </details>
-    <details>
-      <summary>Equations and symbol key</summary>
-      <pre class="eq">z = μ / σ
-P(House race)  = 2 · f(z) / (σ · T)        (per voter)
-P(House race)  = 2 · f(z) / σ              (per race)
-P(Senate race) = same formula; a state's Senate power adds across its contests
-P(combined)    = P(House) + w · P(Senate, voter's state)
-Index          = P / (average P)           1.00 = average voter (per voter) or average race (per race)</pre>
-      <ul class="key">
-        <li><b>μ</b> expected Democratic-minus-Republican margin, as a fraction of votes cast (positive = Democrat ahead)</li>
-        <li><b>σ</b> spread (scale) of the final margin. "One per chamber" uses the median of the values implied by each race's win probability; "per race" uses each race's own value where its win probability is between 5–40% or 60–95%, otherwise the chamber median</li>
-        <li><b>z</b> the forecast margin measured in σ units</li>
-        <li><b>f</b> height of the margin curve at z: Normal, or Student t with 4 degrees of freedom whose scale is set so its win probability matches the forecast</li>
-        <li><b>T</b> total votes cast in that race in the 2024 presidential election, used as a turnout proxy</li>
-        <li><b>P</b> probability that one ballot decides the race</li>
-        <li><b>w</b> Senate weight (default 4.35 = 435 ÷ 100: a senator is 1/100 of the Senate, a representative 1/435 of the House)</li>
-        <li><b>Average P</b> per voter: the vote-weighted mean across voters; per race: the simple mean across races</li>
-      </ul>
-    </details>
-    <details>
-      <summary>What the choices mean</summary>
+      <summary>What this measures</summary>
+      <p>An estimate of how likely a single ballot is to decide each 2026 House and Senate race, rescaled so the average equals 1. This is not a forecast of who wins; it converts an existing forecast into ballot-level power. I'm using Lakshya Jain/Split Ticket/The Argument's forecast to power this index, due to data availability and relative consistency with other forecasts.</p>
+      <p>There are House, Senate and combined versions, each in two flavors of population weighting:</p>
       <ul>
-        <li><b>Per voter</b> divides by votes cast, so a voter in a small-turnout race has more power than one in a large-turnout race with the same margin. <b>Per race</b> skips that division and ranks how decisive each race is, regardless of size.</li>
-        <li><b>State average</b> averages the combined index of a state's House districts (weighted by votes when counting per voter). Because each district's combined index already includes its state's Senate race, this is the state's average House power plus its Senate power.</li>
-        <li>The Senate weight only affects the Combined and State average views. A weight of 1 counts a Senate race the same as a House race.</li>
-        <li>States without a Senate race in 2026 have no Senate component.</li>
-        <li>Rankings that change a lot between settings are less reliable than ones that stay put; the search box shows each district's rank range across settings.</li>
+        <li><b>Weighted (per voter):</b> Measures how much your vote matters, by dividing the power by the total votes cast in the 2024 Presidential Election. This favors smaller electorates, like lower population senate seats (such as Alaska, Maine and Nebraska) as well as smaller than average congressional districts due to rounding impacts in seat apportionment (like in Alabama, Colorado, Montana, Nebraska which have smaller than average district populations) or due to low turnout in 2024 (CA-22, TX-09 are examples) tend to be a bit upweighted, because these jurisdictions have less voters.</li>
+        <li><b>Unweighted (per race):</b> Measures how much this race (or combination of races) matters. No adjustment for how many people vote. This version does not consider electorate population impact on voter power, only the closeness of the races in combination.</li>
       </ul>
     </details>
     <details>
-      <summary>Sources</summary>
+      <summary>Data sources</summary>
       <ul>
-        <li>Forecast (win probabilities and expected margins): Split Ticket 2026 House and Senate forecasts.</li>
-        <li>2024 presidential votes by 2026 congressional district: <a href="https://www.the-downballot.com/p/the-downballot-releases-presidential" rel="noopener">The Downballot</a>.</li>
-        <li>2024 presidential votes by state: <a href="https://www.fec.gov/documents/5644/2024presgeresults.pdf" rel="noopener">Federal Election Commission</a>.</li>
-        <li>Method: Gelman, Silver and Edlin, <a href="https://www.nber.org/system/files/working_papers/w15220/w15220.pdf" rel="noopener">What is the Probability Your Vote Will Make a Difference?</a>; Gelman, Katz and Bafumi, <a href="https://sites.stat.columbia.edu/gelman/research/published/gelmankatzbafumi.pdf" rel="noopener">Standard Voting Power Indexes Don't Work</a>; Mulligan and Hunter, <a href="https://www.nber.org/papers/w8590.pdf" rel="noopener">The Empirical Frequency of a Pivotal Vote</a>.</li>
+        <li>2026 House and Senate win probabilities and expected margins: <a href="https://www.theargumentmag.com/p/split-ticket-2026-midterms-model" rel="noopener">The Argument/Split Ticket</a>.</li>
+        <li>2024 presidential votes by 2026 congressional district lines: <a href="https://www.the-downballot.com/p/the-downballot-releases-presidential" rel="noopener">The Downballot</a>.</li>
+        <li>2024 presidential votes by state: <a href="https://www.fec.gov/documents/5644/2024presgeresults.pdf" rel="noopener">Federal Election Commission, 2024 general election results</a>.</li>
       </ul>
+      <p>The forecast and vote data belong to their respective publishers. Forecasts change, so rankings will too.</p>
     </details>
     <details>
-      <summary>Limits</summary>
-      <ul>
-        <li>The forecast is another group's work; this page only converts its numbers. Forecasts change, and so will these rankings.</li>
-        <li>2024 presidential turnout is a stand-in for 2026 turnout, which will be lower and will differ by place.</li>
-        <li>Races with no major-party opponent, or where two candidates of one party advance, show extreme margins and rank at the bottom.</li>
-        <li>The index measures the chance of casting a deciding ballot, not a voter's influence on policy.</li>
-      </ul>
+      <summary>Key methodological choices</summary>
+      <ol>
+        <li><b>Decisiveness model.</b> A ballot decides a race when the final margin lands within one vote of a tie. I take the height of the margin's probability curve at a tie and multiply by 2 (one ballot moves the margin by two votes).</li>
+        <li><b>Spread (σ).</b> Default: one shared σ per chamber, the median of the values implied by each race's win probability. Race-by-race implied σ is available as a robustness check, and is used only where the win probability is between 10 and 45 points from 50/50; otherwise the chamber median is used.</li>
+        <li><b>Curve shape.</b> Default: a fat-tailed Student t with 4 degrees of freedom, as in Gelman, Silver and Edlin, scaled so its win probability matches the forecast. Normal is the alternative.</li>
+        <li><b>Denominator.</b> Weighted versions divide by 2024 total presidential votes cast; unweighted versions do not.</li>
+        <li><b>Chamber weight.</b> In the combined index a Senate seat counts <i>w</i> = 4.35 times a House seat (435 ÷ 100), because a senator is 1/100 of the Senate and a representative is 1/435 of the House. The site lets you pick other integer weights.</li>
+        <li><b>Normalization.</b> Weighted indexes divide by the vote-weighted average (average voter = 1). Unweighted indexes divide by the simple average across races (average race = 1).</li>
+        <li><b>Fragile rankings.</b> Rankings that change when σ mode or curve shape changes should be treated as fragile; the search box shows each district's rank range across settings.</li>
+        <li><b>Known side effect.</b> Per-voter power rewards low-turnout districts. Among 60 competitive districts, the log of power correlates about 0.85 with closeness and about &minus;0.46 with the log of votes cast.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>State average</summary>
+      <p>The state-average index is the average of a state's House district combined indexes (weighted by votes when counting per voter, a simple average per race). Each district's combined index already includes its state's Senate race, so this equals the state's average House power plus its Senate power.</p>
     </details>
   </section>
 </main>
