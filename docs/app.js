@@ -103,16 +103,22 @@
   }
 
   // ---------- search ----------
+  // Every combination of the user-facing choices, computed once (the data never changes while the page is open).
+  var comboCache = null;
   function allCombos() {
-    var out = [];
-    ["common", "implied"].forEach(function (sg) {
-      ["fat", "normal"].forEach(function (sh) {
-        [1, 4.35].forEach(function (w) {
-          out.push(Object.assign({}, settings, { sigma: sg, shape: sh, w: w }));
+    if (comboCache) return comboCache;
+    comboCache = [];
+    ["weighted", "unweighted"].forEach(function (wt) {
+      ["common", "implied"].forEach(function (sg) {
+        ["fat", "normal"].forEach(function (sh) {
+          [1, 4.35].forEach(function (w) {
+            var st = { weighting: wt, w: w, sigma: sg, shape: sh, nu: DEFAULTS.nu };
+            comboCache.push({ s: st, res: recompute(st) });
+          });
         });
       });
     });
-    return out;
+    return comboCache;
   }
   function rankOf(res, kind, id) {
     var rows = kind === "senate" ? res.senate : res.house;
@@ -149,10 +155,10 @@
   }
 
   function resultCard(m) {
-    var isW = settings.weighting === "weighted", combos = allCombos().map(function (s) { return recompute(s); });
+    var isW = settings.weighting === "weighted", combos = allCombos();
     if (m.kind === "state") {
       var agg = stateAgg(result, isW), g = agg.filter(function (x) { return x.state === m.id; })[0];
-      var rk = stateRank(agg, m.id), rngSt = range(combos.map(function (c) { return stateRank(stateAgg(c, isW), m.id); }));
+      var rk = stateRank(agg, m.id), rngSt = range(combos.map(function (c) { return stateRank(stateAgg(c.res, c.s.weighting === "weighted"), m.id); }));
       var sens = result.senate.filter(function (x) { return x.rec.state === m.id; });
       var senHtml = sens.length ? sens.map(function (x) {
         return esc(x.rec.matchup) + " (" + esc(plainForecast(x.rec)) + ") · Senate index " + fmtIdx(x.indexSenate) + " · rank " + rankOf(result, "senate", x.rec.id) + " of " + result.senate.length;
@@ -164,24 +170,24 @@
         "<dt>House-only average</dt><dd>" + fmtIdx(g.avgHouse) + "</dd>" +
         "<dt>Senate race</dt><dd>" + senHtml + "</dd>" +
         "<dt>Rank range across settings</dt><dd>state average " + rngSt + "</dd></dl>" +
-        '<p class="hint">State average = the average of the state\'s House district combined indexes' + (isW ? " (weighted by votes)" : "") + ', each of which includes the state\'s Senate race. Districts:</p><div class="picks">' + picksHtml + "</div></div>";
+        '<p class="hint">State average = the average of the state\'s House district combined indexes' + (isW ? " (weighted by votes)" : "") + ', each of which includes the state\'s Senate race. The rank range covers per voter vs per race, σ mode, curve shape and Senate weight 1 or 4.35. Districts:</p><div class="picks">' + picksHtml + "</div></div>";
     }
     if (m.kind === "house") {
       var o = result.house.filter(function (x) { return x.rec.id === m.id; })[0], rec = o.rec;
       var sen = data.senate.filter(function (s) { return s.state === rec.state; });
       var rcT = rankOf(result, "total", m.id), rcH = rankOf(result, "house", m.id);
-      var rngT = range(combos.map(function (c) { return rankOf(c, "total", m.id); }));
-      var rngH = range(combos.map(function (c) { return rankOf(c, "house", m.id); }));
+      var rngT = range(combos.map(function (c) { return rankOf(c.res, "total", m.id); }));
+      var rngH = range(combos.map(function (c) { return rankOf(c.res, "house", m.id); }));
       return '<div class="result"><p class="hint" style="margin:0 0 6px"><button type="button" class="ghost" data-kind="state" data-id="' + esc(rec.state) + '">&larr; ' + esc(STATE_NAMES[rec.state]) + '</button></p><h3>' + esc(rec.id) + ' <span class="matchup" style="display:inline">' + esc(rec.matchup) + "</span></h3>" +
         "<div>" + esc(plainForecast(rec)) + (isW ? " · " + fmtVotes(rec.T) + " votes in 2024" : "") + "</div><dl>" +
         "<dt>Combined index</dt><dd>" + fmtIdx(o.indexTotal) + " · rank " + rcT + " of " + result.house.length + "</dd>" +
         "<dt>House-only index</dt><dd>" + fmtIdx(o.indexHouse) + " · rank " + rcH + " of " + result.house.length + "</dd>" +
         "<dt>Senate race in " + esc(STATE_NAMES[rec.state]) + "</dt><dd>" + (sen.length ? esc(sen.map(function (s) { return s.matchup + " (" + plainForecast(s) + ")"; }).join("; ")) : "none in 2026") + "</dd>" +
         "<dt>Rank range across settings</dt><dd>combined " + rngT + " · House-only " + rngH + "</dd></dl>" +
-        '<p class="hint">Range covers σ mode, curve shape and Senate weight 1 or 4.35 at the current Count setting.</p></div>';
+        '<p class="hint">Range covers per voter vs per race, σ mode, curve shape and Senate weight 1 or 4.35.</p></div>';
     }
     var so = result.senate.filter(function (x) { return x.rec.id === m.id; })[0], sr = so.rec;
-    var rs = rankOf(result, "senate", m.id), rngS = range(combos.map(function (c) { return rankOf(c, "senate", m.id); }));
+    var rs = rankOf(result, "senate", m.id), rngS = range(combos.map(function (c) { return rankOf(c.res, "senate", m.id); }));
     return '<div class="result"><p class="hint" style="margin:0 0 6px"><button type="button" class="ghost" data-kind="state" data-id="' + esc(sr.state) + '">&larr; ' + esc(STATE_NAMES[sr.state]) + '</button></p><h3>' + esc(STATE_NAMES[sr.state]) + " Senate <span class='matchup' style='display:inline'>" + esc(sr.matchup) + "</span></h3>" +
       "<div>" + esc(plainForecast(sr)) + (isW ? " · " + fmtVotes(sr.T) + " votes in 2024" : "") + "</div><dl>" +
       "<dt>Senate index</dt><dd>" + fmtIdx(so.indexSenate) + " · rank " + rs + " of " + result.senate.length + " contested seats</dd>" +
