@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/data.json from the forecast TSVs and 2024 vote CSVs in data/.
+"""Build docs/data.json from the forecast TSVs and 2024 vote CSVs in data/.
 
 Update workflow: replace data/house_forecast.tsv and data/senate_forecast.tsv
 (columns: cd|state, matchup, raw_prediction, win_prob_d), then run:  python3 build.py
@@ -38,6 +38,6 @@ for r in read_tsv("data/senate_forecast.tsv"):
                    "p": float(r["win_prob_d"]) / 100.0, "T": st_votes[st]})
 
 out = {"built": datetime.date.today().isoformat(), "house": house, "senate": senate}
-with open("site/data.json", "w", encoding="utf-8") as f:
+with open("docs/data.json", "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
 print(f"house={len(house)} senate={len(senate)}")
