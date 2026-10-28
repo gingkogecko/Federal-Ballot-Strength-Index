@@ -4,7 +4,7 @@ An estimate of how likely a single ballot is to decide each 2026 House and Senat
 
 There are House, Senate and combined versions, each in two flavors:
 
-- **Weighted (per voter):** my vote matters. Divides by votes cast, so smaller electorates score higher.
+- **Weighted (per voter):** my vote matters. Divides by total votes cast in the 2024 Presidential Election, so smaller electorates score higher.
 - **Unweighted (per race):** this race matters. No adjustment for how many people vote.
 
 The site (in `docs/`) lets you change the assumptions below and shows the top 15 for the combined, House and Senate indexes, plus a search by district, state or candidate.
